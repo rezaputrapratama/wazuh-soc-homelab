@@ -1,34 +1,26 @@
-# Wazuh SOC & SIEM Home Lab
+# Pentest Report Generator
 
-Home lab Blue Team untuk mempelajari monitoring keamanan, deteksi ancaman, dan analisis insiden menggunakan Wazuh.
+Alat command line (Python) yang mengubah catatan temuan penetration testing menjadi laporan HTML yang rapi.
 
-## Tujuan
+## Rencana
 
-- Membangun lingkungan SIEM mini dengan Wazuh (Docker)
-- Mengumpulkan log dari mesin Linux dan Windows
-- Membuat custom detection rules untuk serangan Brute Force dan Ransomware
-- Mendokumentasikan hasil simulasi serangan dalam bentuk laporan insiden
-
-## Teknologi
-
-- Wazuh (SIEM/XDR)
-- Docker & Docker Compose
-- Trivy (vulnerability scanning)
-- VirtualBox/VMware (VM lab)
-
-## Roadmap
-
-- [x] Fase 1: Struktur repo dan dokumentasi awal
-- [ ] Fase 2: Deploy Wazuh dengan Docker
-- [ ] Fase 3: Pasang agent di Linux/Windows
-- [ ] Fase 4: Analisis log dan alert
-- [ ] Fase 5: Rule deteksi Brute Force
-- [ ] Fase 6: Rule deteksi Ransomware
-- [ ] Fase 7: Automasi skrip parsing alert
-- [ ] Fase 8: Dashboard ringkasan alert
-- [ ] Fase 9: Scan kerentanan dengan Trivy
-- [ ] Fase 10: Finalisasi dan dokumentasi hasil
+- Menulis temuan dalam file YAML
+- Menghitung skor dan tingkat keparahan dari vektor CVSS v3.1
+- Mengimpor hasil pemindaian nmap (XML)
+- Menghasilkan laporan HTML yang bisa dicetak menjadi PDF dari browser
 
 ## Status
 
-Sedang dalam pengerjaan bertahap.
+Dalam pengerjaan bertahap.
+
+- [x] Hari 1: format data temuan
+- [ ] Hari 2: pembaca dan validasi file temuan
+- [ ] Hari 3: penghitung skor CVSS v3.1
+- [ ] Hari 4: pengimpor hasil nmap
+- [ ] Hari 5: template laporan HTML
+- [ ] Hari 6: laporan contoh dan panduan pemakaian
+
+## Etika dan batasan
+
+Alat ini hanya untuk mendokumentasikan pengujian pada sistem milik sendiri atau yang secara resmi mengizinkan.
+Data contoh di repo ini fiktif dan memakai alamat dokumentasi (192.0.2.0/24).
