@@ -1,0 +1,27 @@
+report:
+  title: "Contoh Laporan Pengujian Lab"
+  tester: "Reza Putra Pratama"
+  date: "2026-11-07"
+  scope:
+    - "192.0.2.10 (target lab fiktif)"
+
+findings:
+  - id: F-001
+    title: "Versi server terlihat di header HTTP"
+    cvss_vector: "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+    affected:
+      - "192.0.2.10:80"
+    description: >
+      Server mengirim header Server yang memuat nama dan versi perangkat lunak,
+      sehingga memudahkan penyerang mencari kerentanan yang cocok.
+    evidence:
+      - text: "Respons HTTP memuat header: Server: Apache/2.4.x"
+        screenshot: ""
+    steps_to_reproduce:
+      - "Kirim permintaan HEAD ke 192.0.2.10:80"
+      - "Periksa header Server pada respons"
+    impact: "Informasi versi membantu penyerang menyusun serangan yang lebih terarah."
+    remediation: "Sembunyikan atau samarkan header Server pada konfigurasi web server."
+    references:
+      - "OWASP Top 10: Security Misconfiguration"
+    status: open
